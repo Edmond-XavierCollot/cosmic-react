@@ -1,4 +1,11 @@
-const globals = require("./globals");
+const buildGlobals = require("./globals");
+
+const globals = Object.keys(buildGlobals()).reduce(
+  (acc, key) => ({ ...acc, [key]: "readonly" }),
+  {}
+);
+
+console.log("ESLINT", globals);
 
 module.exports = {
   extends: [
@@ -22,8 +29,5 @@ module.exports = {
     "react/prop-types": 0,
     "react/jsx-no-undef": ["error", { allowGlobals: true }],
   },
-  globals: Object.keys(globals).reduce(
-    (acc, key) => ({ ...acc, [key]: "readonly" }),
-    {}
-  ),
+  globals,
 };

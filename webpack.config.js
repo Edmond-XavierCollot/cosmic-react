@@ -1,9 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
-const globals = require("./globals");
+const buildGlobals = require("./globals");
 
-module.exports = {
+module.exports = () => ({
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
     path: path.resolve(__dirname, "build"),
@@ -32,9 +32,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
     }),
-    new ProvidePlugin(globals),
+    new ProvidePlugin(buildGlobals()),
   ],
-  devServer: {
-    port: 3000,
-  },
-};
+  mode: "development",
+});
