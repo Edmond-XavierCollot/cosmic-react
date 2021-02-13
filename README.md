@@ -9,54 +9,32 @@ cosmic boilerplate for react apps
 [![License](https://img.shields.io/npm/l/cosmic-react.svg)](https://github.com/git@github.com:Edmond-XavierCollot/cosmic-react.git/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [cosmic-react](#cosmic-react)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g cosmic-react
 $ cosmic-react COMMAND
 running command...
 $ cosmic-react (-v|--version|version)
-cosmic-react/1.0.0 darwin-x64 node-v12.18.2
+cosmic-react/1.1.0 darwin-x64 node-v12.18.2
 $ cosmic-react --help [COMMAND]
 USAGE
   $ cosmic-react COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`cosmic-react hello`](#cosmic-react-hello)
-- [`cosmic-react help [COMMAND]`](#cosmic-react-help-command)
-- [`cosmic-react new`](#cosmic-react-new)
-
-## `cosmic-react hello`
-
-Describe the command here
-
-```
-USAGE
-  $ cosmic-react hello
-
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
-```
-
-_See code: [src/commands/hello.js](https://github.com/Edmond-XavierCollot/cosmic-react/blob/v1.0.0/src/commands/hello.js)_
+* [`cosmic-react help [COMMAND]`](#cosmic-react-help-command)
+* [`cosmic-react new NAME`](#cosmic-react-new-name)
 
 ## `cosmic-react help [COMMAND]`
 
@@ -75,22 +53,17 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
 
-## `cosmic-react new`
+## `cosmic-react new NAME`
 
-Describe the command here
+create new project
 
 ```
 USAGE
-  $ cosmic-react new
+  $ cosmic-react new NAME
 
-OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+ARGUMENTS
+  NAME  name of the application to create
 ```
 
-_See code: [src/commands/new.js](https://github.com/Edmond-XavierCollot/cosmic-react/blob/v1.0.0/src/commands/new.js)_
-
+_See code: [src/commands/new.js](https://github.com/Edmond-XavierCollot/cosmic-react/blob/v1.1.0/src/commands/new.js)_
 <!-- commandsstop -->
