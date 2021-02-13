@@ -15,6 +15,8 @@ module.exports = () => {
 
   return {
     React: "react",
+    css: [path.resolve(__dirname, "src/lib/css"), "default"],
+    cx: ["@emotion/css", "cx"],
     UI: ["cosmic-ui", "UI"],
     Grid: ["cosmic-ui", "Grid"],
     ...components,

@@ -5,15 +5,12 @@ const http = require("http").Server(app);
 const io = require("socket.io")(http);
 const chokidar = require("chokidar");
 const path = require("path");
+const open = require("open");
 const buildConfig = require("../webpack.config");
 
 const watcher = chokidar.watch(path.resolve(__dirname, "../src"), {
   ignored: /^\./,
   persistent: true,
-});
-
-io.on("connection", (socket) => {
-  console.log("a user connected");
 });
 
 const generateWebpackMiddleware = () => {
@@ -30,7 +27,6 @@ app.use((...args) => {
 let isCompilationFinished = false;
 
 webackMiddleware.waitUntilValid(() => {
-  console.log("Valid");
   isCompilationFinished = true;
 });
 
@@ -48,4 +44,5 @@ http.listen(3000, () => {
       webackMiddleware = generateWebpackMiddleware();
     }
   });
+  open("http://localhost:3000");
 });

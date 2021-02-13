@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
 const buildGlobals = require("./globals");
+const buildAlias = require("./alias");
 
 module.exports = () => ({
   entry: path.resolve(__dirname, "src/index.js"),
@@ -27,6 +28,9 @@ module.exports = () => ({
         ],
       },
     ],
+  },
+  resolve: {
+    alias: buildAlias(),
   },
   plugins: [
     new HtmlWebpackPlugin({

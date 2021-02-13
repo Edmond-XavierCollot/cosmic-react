@@ -1,40 +1,53 @@
 {
   "name": "cosmic-react",
+  "description": "cosmic boilerplate for react apps",
   "version": "1.0.0",
-  "main": "build/main.js",
-  "author": "edxcollot@gmail.com",
-  "license": "MIT",
-  "scripts": {
-    "start": "node ./devServer/index.js",
-    "build": "webpack --mode=production",
-    "lint": "eslint src"
+  "author": "Edmond-Xavier Collot <edxcollot@gmail.com>",
+  "bin": {
+    "cosmic-react": "./bin/run"
   },
+  "bugs": "https://github.com/git@github.com:Edmond-XavierCollot/cosmic-react.git/issues",
   "dependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-react": "^7.12.10",
-    "babel-loader": "^8.2.2",
-    "chokidar": "^3.5.1",
-    "cosmic-ui": "^1.0.0",
-    "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "express": "^4.17.1",
-    "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^4.5.1",
-    "prettier": "^2.2.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "socket.io": "^3.1.0",
-    "webpack": "^5.15.0",
-    "webpack-cli": "^4.4.0",
-    "webpack-dev-middleware": "^4.1.0",
-    "webpack-dev-server": "^4.0.0-beta.0  ",
-    "webpack-hot-middleware": "^2.25.0"
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
-    "url-loader": "^4.1.1"
+    "@oclif/dev-cli": "^1",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "globby": "^10"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/git@github.com:Edmond-XavierCollot/cosmic-react.git",
+  "keywords": [
+    "react",
+    "cosmic",
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "cosmic-react",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "git@github.com:Edmond-XavierCollot/cosmic-react.git",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint .",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
   }
 }
